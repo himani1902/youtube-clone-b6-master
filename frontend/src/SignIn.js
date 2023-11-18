@@ -2,6 +2,29 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function SignIn() {
+    const  handleSubmit = async(event) => {
+        event.preventDefault();
+        const email = document.getElementById('exampleInputEmail'),value;
+        const passward = document.getElementById('exampleInputEmail'),value;
+        
+        const url = "http://localhost;5500/auth/login";
+        const datab = {
+            email: email, password: passward
+        }
+
+        fatch(url, {method:'POST', body:JSON,stringify(data)})
+        .then(response =>  {
+            console.log{response}
+            if(response.ok){
+                return response.json();
+            }else{
+                throw new Error(response.message)
+            }
+
+        
+        }
+        
+    }
   return (
     <div className='SignIn'>
         <form>
